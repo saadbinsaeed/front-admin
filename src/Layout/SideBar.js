@@ -36,6 +36,19 @@ export default class SideBar extends React.Component {
 						<Icon type="upload" />
 						<span className="nav-text">nav 3</span>
 					</Menu.Item>
+					<SubMenu
+						key="sub1"
+						title={
+							<span>
+								<Icon type="user" />
+								<span>User</span>
+							</span>
+						}
+					>
+						<Menu.Item key="sub3">Tom</Menu.Item>
+						<Menu.Item key="sub4">Bill</Menu.Item>
+						<Menu.Item key="sub5">Alex</Menu.Item>
+					</SubMenu>
 					<Menu.Item key="4">
 						<Icon type="bar-chart" />
 						<span className="nav-text">nav 4</span>
