@@ -13,14 +13,12 @@ import {
 	Rate
 } from 'antd';
 
-
 const FormItem = Form.Item;
 const Option = Select.Option;
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
 
 class Demo extends Component {
-
 	handleSubmit = e => {
 		e.preventDefault();
 		this.props.form.validateFields((err, values) => {
@@ -30,7 +28,6 @@ class Demo extends Component {
 		});
 	};
 
-
 	normFile = e => {
 		console.log('Upload event:', e);
 		if (Array.isArray(e)) {
@@ -38,7 +35,6 @@ class Demo extends Component {
 		}
 		return e && e.fileList;
 	};
-
 
 	render() {
 		const { getFieldDecorator } = this.props.form;
