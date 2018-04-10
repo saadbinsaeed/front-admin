@@ -12,12 +12,14 @@ import {
 	Icon,
 	Rate
 } from 'antd';
+
+
 const FormItem = Form.Item;
 const Option = Select.Option;
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
 
-class Demo extends React.Component {
+class Demo extends Component {
 
 	handleSubmit = e => {
 		e.preventDefault();
