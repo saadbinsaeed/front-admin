@@ -3,39 +3,26 @@ import './App.css';
 import { Layout, Icon } from 'antd';
 import SideBar from './SideBar';
 
-const { Header, Content } = Layout;
+const { Header, Content, Footer } = Layout;
 
 export default class AppLayout extends Component {
-	state = {
-		collapsed: false
-	};
-	toggle = () => {
-		this.setState({
-			collapsed: !this.state.collapsed
-		});
-	};
 	render() {
 		return (
 			<Layout>
-				<SideBar collapsed={this.state.collapsed} />
-				<Layout>
-					<Header style={{ background: '#fff', padding: 0 }}>
-						<Icon
-							className="trigger"
-							type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-							onClick={this.toggle}
-						/>
-					</Header>
-					<Content
-						style={{
-							margin: '24px 16px',
-							padding: 24,
-							background: '#fff',
-							minHeight: 280
-						}}
-					>
-						{this.props.children}
+				<SideBar />
+				<Layout style={{ marginLeft: 200 }}>
+					<Header className="header" />
+					<Content className="body">
+						<div
+							style={{ padding: 24, background: '#fff' }}
+						>
+							{this.props.children}
+						</div>
 					</Content>
+
+					<Footer className="footer">
+						Talent Envoy ©2016 Created by SAAD BIN SAEED
+					</Footer>
 				</Layout>
 			</Layout>
 		);

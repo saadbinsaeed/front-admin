@@ -1,5 +1,21 @@
 @import '~antd/dist/antd.css';
 
+.header {
+  position: fixed;
+  top: 0;
+  margin-left: 0;
+  text-align: center;
+  width: 100%;
+  background: #fff;
+  padding: 0;
+  z-index: 999999999999;
+}
+
+.body {
+  margin: 85px 16px 0;
+  overflow: hidden;
+  height: calc(100vh + 180px)
+}
 .trigger {
   font-size: 18px;
   line-height: 64px;
@@ -16,4 +32,11 @@
   height: 32px;
   background: rgba(255,255,255,.2);
   margin: 16px;
+}
+
+.footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
