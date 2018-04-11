@@ -1,14 +1,15 @@
 import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+
 const { Sider } = Layout;
 const SubMenu = Menu.SubMenu;
 
-export default class SideBar extends React.Component {
-	handleClick = e => {
-		console.log('click ', e);
-	};
+class SideBar extends React.Component {
 	render() {
+		// console.log('log SideBar Props : ', this.props);
+		const { pathname } = this.props.location;
 		return (
 			<Sider
 				style={{
@@ -19,14 +20,14 @@ export default class SideBar extends React.Component {
 				}}
 			>
 				<div className="logo" />
-				<Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
-					<Menu.Item key="1">
+				<Menu theme="dark" mode="inline" defaultSelectedKeys={[`${pathname}`]}>
+					<Menu.Item key="/candidates">
 						<Link to="candidates">
 							<Icon type="user" />
 							<span className="nav-text">Candidates</span>
 						</Link>
 					</Menu.Item>
-					<Menu.Item key="2">
+					<Menu.Item key="/signup">
 						<Link to="signup">
 							<Icon type="video-camera" />
 							<span className="nav-text">Sign Up</span>
@@ -74,3 +75,5 @@ export default class SideBar extends React.Component {
 		);
 	}
 }
+
+export default withRouter(SideBar);
