@@ -8,7 +8,6 @@ import CandidatesPage from './pages/CandidatesPage';
 
 class App extends Component {
 	render() {
-		console.log('log : props : ');
 		return (
 			<BrowserRouter>
 				<AppLayout>
